@@ -137,8 +137,10 @@ if len(prefix) == 4:
         for char in prefix[1:4]:
             prefix = prefix[char]
         if PL.get(prefix) != None:
-            pass
+            print("your vehicle is a", Years[prefix[0]] " ", PL.get(prefix))
     else: print(prefix, "not found")
 
 else:
     print("Prefix should be 4 characters only")
+
+if len()
