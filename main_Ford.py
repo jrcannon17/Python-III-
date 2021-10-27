@@ -1,9 +1,3 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
 def print_hi(name):
     # Use a breakpoint in the code line below to debug your script.
     print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
@@ -98,12 +92,7 @@ Part_Number = {
 
 #for Part_Number in ranges, I chose this option
 
-def check(i, a, b): # check if i is in the range. # return True or False
-    if i in range(a, b):
-        return True
-    else:
-        return False
-#only the first 3 numbers in the description matter.
+
 Part_Range = {}
 
 """5500-5900 : "Rear Springs"
@@ -128,19 +117,32 @@ string = "7L3Z-14D696-A"
 print(len(string))
 
 prefix = input("Please enter the prefix number: ")
-
-if len(prefix) == 4:
+#maybe this should be a definition
+if len(prefix) == 3:
     if prefix.isupper() == False:
         prefix = prefix.upper()
     if Years.get(prefix[0]) != None:
-        #print("The year of the vehicle is from",Years[prefix[0]],"?")
-        for char in prefix[1:4]:
+        year = Years.get(prefix[0])
+        #get Product Line portion of prefix/2 characters
+        for char in prefix[1:2]:
             prefix = prefix[char]
         if PL.get(prefix) != None:
-            print("your vehicle is a", Years[prefix[0]] " ", PL.get(prefix))
+            prod_line = PL.get(prefix)
+        #now get the last character in prefix for design responsibility 
+        if char in prefix[3] in R_Code.get(prefix[3]):
+            design = R_Code.get(prefix[3])
+            print("your vehicle is a", year, " ", prod_line, design)
+            answer = input("Yes or No?")
+
     else: print(prefix, "not found")
 
 else:
     print("Prefix should be 4 characters only")
 
 if len()
+    def check(i, a, b):  # check if i is in the range. # return True or False
+        if i in range(a, b):
+            return True
+        else:
+            return False
+    # only the first 3 numbers in the description matter.
