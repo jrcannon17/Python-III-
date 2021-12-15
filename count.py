@@ -8,13 +8,21 @@ Hex = input("Enter Value: ")
 for char in Hex:
 	char.upper
 dec = int(Hex, 16)
+mod = len(Hex) % 2 
+print('mod is', mod)
 #hex1 = len(Hex)
-print("length is", len(Hex))
-print("Deciminal Value is", dec)
-#print("total length is ", len(hex1))
-#for 2's complement 
-
+print("length is", len(Hex),"\nValue has", len(Hex)/2, "Databytes")
+print("Decimal Value is", dec)
 binary_number = int("{0:08b}".format(dec))
+n = 2
+count = 0
+
+for i in range(0,len(Hex), n):
+	count += 1 
+	print('Databyte',count,':',Hex[i:i+n])
+
+
+print("Binary: ", binary_number)
 
 flipped_binary_number = ~ binary_number
 
@@ -26,11 +34,4 @@ twos_complement = int(str_twos_complement, 2)
 
 print("2's complement is: ", twos_complement)
 
-def twos_comp(val, bits):
-    """compute the 2's complement of int value val"""
-    if (val & (1 << (bits - 1))) != 0: # if sign bit is set e.g., 8bit: 128-255
-        val = val - (1 << bits)        # compute negative value
-    return val                         # return positive value as is
-out = twos_comp(int(Hex,16), 32)
 
-print("2's complement: ", out)
