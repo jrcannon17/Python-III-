@@ -34,3 +34,18 @@ str_twos_complement = str(flipped_binary_number)
 twos_complement = int(str_twos_complement, 2)
 
 print("2's complement is: ", twos_complement)
+
+
+'''
+while True:
+    x = input("ERD: ")
+    y = input ("appliance: ")
+
+    if x.lower() == "q":
+        break
+    else:
+        if y == "espresso":
+            print("espresso")
+        else:
+            returnAllTheThings(x)
+'''
