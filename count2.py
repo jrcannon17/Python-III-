@@ -20,7 +20,8 @@ count = -1
 for i in range(0,len(Hex), n):
 	count +=1
 	print('Databyte',count,':',Hex[i:i+n], \
-	'\t Binary Value: ', str(bin(int(Hex[i:i+n], base=16)))[2:])
+        '\t Decimal Value: ', str(int(Hex[i:i+n], base=16)), \
+	    '\t Binary Value: ', str(bin(int(Hex[i:i+n], base=16)))[2:])
 
 
 print("Binary: ", binary_number)
